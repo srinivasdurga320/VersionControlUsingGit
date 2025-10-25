@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Version Control with Git - Learning Hub</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 800px;
+        padding: 3rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      }
+
+      .git-logo {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 2rem;
+        background: #f1502f;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: white;
+        font-weight: bold;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .description {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+        line-height: 1.6;
+        opacity: 0.8;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        color: white;
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .feature {
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+      }
+
+      .feature:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      .feature p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .container {
+          padding: 2rem;
+          margin: 1rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="git-logo">Git</div>
+      <h1>Version Control Learning Hub</h1>
+      <p class="subtitle">Master Git & Version Control from Zero to Hero</p>
+
+      <p class="description">
+        Welcome to your comprehensive learning resource for Git version control!
+        Whether you're a complete beginner or looking to strengthen your Git
+        skills, we've got you covered with interactive tutorials, practical
+        examples, and real-world scenarios.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="git-demo.html" class="btn btn-primary"
+          >🚀 Start Interactive Tutorial</a
+        >
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">🎯</div>
+          <h3>Beginner Friendly</h3>
+          <p>
+            Start from scratch with clear explanations and real-world analogies
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Interactive Learning</h3>
+          <p>
+            Try Git commands in our simulation environment before using them for
+            real
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🛠️</div>
+          <h3>Practical Examples</h3>
+          <p>
+            Learn through scenarios you'll actually encounter in real
+            development
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">📖</div>
+          <h3>Complete Reference</h3>
+          <p>Comprehensive command guide for quick lookup and advanced usage</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Add some interactive elements
+      document.addEventListener("DOMContentLoaded", function () {
+        const features = document.querySelectorAll(".feature");
+
+        features.forEach((feature, index) => {
+          feature.style.opacity = "0";
+          feature.style.transform = "translateY(20px)";
+          feature.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+
+          setTimeout(() => {
+            feature.style.opacity = "1";
+            feature.style.transform = "translateY(0)";
+          }, 200 * (index + 1));
+        });
+
+        // Add click event to Git logo for fun
+        const gitLogo = document.querySelector(".git-logo");
+        gitLogo.addEventListener("click", function () {
+          this.style.transform = "rotate(360deg) scale(1.1)";
+          this.style.transition = "transform 0.6s ease";
+
+          setTimeout(() => {
+            this.style.transform = "rotate(0deg) scale(1)";
+          }, 600);
+        });
+      });
+    </script>
+  </body>
+</html>
